@@ -1,0 +1,50 @@
+{
+  "name": "latex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "algebra-latex": "^0.5.3",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel-core": "^5.0.0",
+    "babel-loader": "^5.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^1.6.1",
+    "isparta": "^3.0.4",
+    "isparta-instrumenter-loader": "^0.2.1",
+    "istanbul": "^0.3.19",
+    "jasmine": "^2.2.1",
+    "jasmine-core": "^2.2.0",
+    "jquery": "^1.7.2",
+    "jquery-touch-events": "^1.0.7",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-bundle": "^1.12.1",
+    "jquery-ui-touch-punch": "^0.2.3",
+    "js-to-less-var-loader": "^1.0.4",
+    "json-loader": "^0.5.7",
+    "karma": "^0.13.2",
+    "karma-coverage": "^0.5.2",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-webpack": "^1.6.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "mock-require": "^2.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.15.0",
+    "webpack-jquery-ui": "^1.0.0",
+    "webpack-stream": "^4.0.0"
+  },
+  "scripts": {
+    "test": "karma start",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC"
+}
