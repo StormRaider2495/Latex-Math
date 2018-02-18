@@ -64,6 +64,7 @@ $("#cmdInputButton").off("click").on("click", () => {
 $("#typeInputButton").off("click").on("click", () => {
     let text = $("#latexInput2").val();
     mathField.typedText(text);
+    mathField.focus();
 });
 
 
