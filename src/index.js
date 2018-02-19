@@ -1,5 +1,11 @@
-const AlgebraLatex = require('algebra-latex');
+window.jQuery = require('jquery');
+require('./mathquill.js');
+module.exports = window.MathQuill;
 
+const AlgebraLatex = require('algebra-latex');
+// const MathQuill = require('exports-loader?window.MathQuill!imports-loader?window.jQuery=jquery!mathquill/build/mathquill.js');
+
+var mathField;
 let mathFieldSpan = document.getElementById('math-field');
 let latexSpan = document.getElementById('latex');
 let exprSpan = document.getElementById('expr');
@@ -7,9 +13,7 @@ let ansSpan = document.getElementById('ans');
 let latexInput;
 let algebraObj;
 let mathOutput;
-
 let MQ = MathQuill.getInterface(2); // for backcompat
-
 let evaluateLatex;
 
 let config = {
@@ -30,15 +34,15 @@ let config = {
         enter: function () { evaluateLatex(); }
     }
 };
-let mathField = MQ.MathField(mathFieldSpan, config);
+mathField = MQ.MathField(mathFieldSpan, config);
 
 evaluateLatex = function () {
     try {
         let tree, evl;
-        tree = MathExpression.fromLatex(latexInput);
+        // tree = MathExpression.fromLatex(latexInput);
         // evl = tree.evaluate();
         evl = latexeval(latexInput)
-        console.log(tree);
+        // console.log(tree);
         console.log(evl)
         ansSpan.innerHTML = evl;
     } catch (error) {
@@ -72,6 +76,19 @@ $("#writeInputButton").off("click").on("click", () => {
     let text = $("#latexInput3").val();
     mathField.write(text);
 });
+
+$("#KeyInputButton").off("click").on("click", () => {
+    let text = $("#latexInput4").val();
+    mathField.keystroke(text);
+});
+
+$("#clearAll").off("click").on("click", () => {
+    // mathField.latex('');
+    mathField.select();
+    mathField.clearSelection();
+});
+
+
 
 /**
  * Converts the given Latex expression to a Javascript expression.
@@ -136,7 +153,7 @@ function latexeval(expression, parseOnly) {
      * commas as separators) are replaced.
      */
     expression = expression.replace(/,/ig, '.');
-    // expression = expression.replace(/\\mathrm{e}|\\e|\\text{e}/ig, '\\exp1');
+    expression = expression.replace(/\\mathrm{e}|\\e|\\text{e}/ig, '\\exp1'); // replace \text{e} with exp()
 
     while (oldexpr !== expression) {
         // Replace strings as long as the expression keeps changing.

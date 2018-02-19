@@ -36,3 +36,4 @@ References
 * [E-Math](https://github.com/e-math/calculator)
 * [UMEditor](https://github.com/wensheng/umeditor-mathquill)
 * [MathQuill Cheat Sheet](https://www.udacity.com/wiki/ma006/mathquill)
+* [Importing MathQuill](https://github.com/luxp/mathquill-webpack/blob/master/index.js)
