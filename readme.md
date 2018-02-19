@@ -33,5 +33,6 @@ References
 --------
 
 * [MathQuill](http://mathquill.com/) (GNU LGPL)
-* [E-Math](https://github.com/e-math/mathquill)
+* [E-Math](https://github.com/e-math/calculator)
 * [UMEditor](https://github.com/wensheng/umeditor-mathquill)
+* [MathQuill Cheat Sheet](https://www.udacity.com/wiki/ma006/mathquill)

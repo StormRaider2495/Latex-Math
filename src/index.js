@@ -16,7 +16,7 @@ let config = {
     spaceBehavesLikeTab: true, // configurable
     restrictMismatchedBrackets: true,
     supSubsRequireOperand: true,
-    autoCommands: 'pi theta pm sqrt sum prod coprod',
+    autoCommands: 'pi theta pm sqrt nthroot sum prod coprod',
     autoOperatorNames: 'sin cos tan',
     handlers: {
         edit: function () { // useful event handlers
