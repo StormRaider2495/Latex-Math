@@ -16,12 +16,15 @@ let mathOutput;
 let MQ = MathQuill.getInterface(2); // for backcompat
 let evaluateLatex;
 
+// configurable object
 let config = {
-    spaceBehavesLikeTab: true, // configurable
+    spaceBehavesLikeTab: true,
     restrictMismatchedBrackets: true,
     supSubsRequireOperand: true,
-    autoCommands: 'pi theta pm sqrt nthroot sum prod coprod',
-    autoOperatorNames: 'sin cos tan',
+    // autoCommands: 'pi pm sqrt nthroot prod div ast star frac',
+    // autoCommands: 'pi theta pm sqrt nthroot sum prod coprod',
+    autoCommands: 'pi pm sqrt nthroot div ast star frac',
+    autoOperatorNames: 'ln log sin cos tan asin acos atan invsin invcos invtan',
     handlers: {
         edit: function () { // useful event handlers
             var enteredMath = mathField.latex(); // Get entered math in LaTeX format
@@ -88,6 +91,12 @@ $("#clearAll").off("click").on("click", () => {
     mathField.clearSelection();
 });
 
+$("#LatexInputButton").off("click").on("click", () => {
+    let text = $("#latexInput5").val();
+    mathField.latex(text);
+});
+
+
 
 
 /**
@@ -153,7 +162,7 @@ function latexeval(expression, parseOnly) {
      * commas as separators) are replaced.
      */
     expression = expression.replace(/,/ig, '.');
-    expression = expression.replace(/\\mathrm{e}|\\e|\\text{e}/ig, '\\exp1'); // replace \text{e} with exp()
+    expression = expression.replace(/\\mathrm{e}|\\e|e^|\\text{e}/ig, '\\exp1'); // replace \text{e} with exp()
 
     while (oldexpr !== expression) {
         // Replace strings as long as the expression keeps changing.
