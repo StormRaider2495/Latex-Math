@@ -1,6 +1,7 @@
 Quill Implementation
 ==============
 
+Github hosted link - [https://stormraider2495.github.io/Latex-Math/](https://stormraider2495.github.io/Latex-Math/)
 ```
 - Here operator repeatation can happen.
 - There is no imit on the number  of inputs
